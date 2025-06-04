@@ -1,0 +1,12 @@
+*.py[cod]
+.*
+!.devcontainer
+!.dockerignore
+!.github
+!.gitignore
+!.vscode
+*.log
+*.pot
+*.pyc
+__pycache__/
+app/__pycache__
