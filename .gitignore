@@ -1,12 +1,41 @@
-*.py[cod]
-.*
-!.devcontainer
-!.dockerignore
-!.github
-!.gitignore
-!.vscode
-*.log
-*.pot
-*.pyc
+# Byte-compiled / optimized / DLL files
 __pycache__/
-app/__pycache__
+*.py[cod]
+*.pyo
+
+# Logs and debug
+*.log
+
+# Distribution / packaging
+*.egg-info/
+*.pot
+
+# Environment variables and secrets
+.env
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+myenv/
+
+# IDE settings
+.vscode/
+.idea/
+
+# macOS system files
+.DS_Store
+
+# VS Code Remote Containers / Dev containers
+.devcontainer/
+
+# GitHub and Docker ignore files
+!.github/
+!.gitignore
+!.dockerignore
+
+# Don't ignore these folders
+!.vscode/
