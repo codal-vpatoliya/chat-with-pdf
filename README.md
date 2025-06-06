@@ -24,9 +24,9 @@ Place your PDF file in the uploads/ folder:
 uploads/myfile.pdf
 ```
 
-2. Run the App
+2. Run the CLI App
 ```
-python main.py
+python cli.py
 ```
 
 Follow the prompts:
@@ -44,20 +44,42 @@ Ask a question (or type 'exit'): What is the refund policy?
 🧠 Answer: The refund policy states that customers must...
 ```
 
+## 🌐 API Usage (Frontend Integration)
+- Start the FastAPI server:
+```
+uvicorn app.server:app --reload
+```
+
+### API Endpoints:
+
+```
+http://127.0.0.1:8000/docs
+```
+
+| Method   | Endpoint       | Description              |
+| -------- | -------------- | ------------------------ |
+| `POST`   | `/upload-pdf/` | Upload a new PDF         |
+| `POST`   | `/ask`         | Ask a question about PDF |
+| `DELETE` | `/delete-pdf/` | Delete uploaded PDF      |
+
+
 ## 📁 Folder Structure
 ```
 ├── app/
-│ ├── config.py # Model & path configs
-│ ├── pdf_reader.py # PDF text extraction
-│ ├── ingest.py # Chunk + embed + index text
-│ ├── qa_engine.py # Vector search + Qwen answering
+│ ├── __init__.py        # model installation on local
+│ ├── api.py             # FastAPI routes (upload, ask, delete)
+│ ├── config.py          # Model & path configs
+│ ├── pdf_reader.py      # PDF text extraction
+│ ├── ingest.py          # Chunk + embed + index text
+│ ├── qa_engine.py       # Vector search + Qwen answering
 │
-├── uploads/ # Place your PDFs here
-├── vector_store/ # Stores FAISS index + text chunks
+├── uploads/             # Place your PDFs here
+├── vector_store/        # Stores FAISS index + text chunks
 │ ├── index.faiss
 │ └── docs.pkl
 │
-├── main.py # CLI app to run
+├── cli.py               # CLI app to run
+├── main.py              # FastAPI server app
 ├── requirements.txt
 └── README.md
 ```
