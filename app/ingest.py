@@ -1,9 +1,8 @@
 from sentence_transformers import SentenceTransformer
 import faiss, pickle
-from app.config import INDEX_PATH, DOCS_PATH
-
+from app.config import INDEX_PATH, DOCS_PATH, EMBEDDING_MODEL_NAME
 # Initialize embedding model
-embedder = SentenceTransformer("all-MiniLM-L6-v2")
+embedder = SentenceTransformer(EMBEDDING_MODEL_NAME)
 
 # Simple text splitter (manual chunking)
 def simple_chunk_text(text, chunk_size=500, overlap=50):

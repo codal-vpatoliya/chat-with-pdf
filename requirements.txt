@@ -1,5 +1,22 @@
+# Core
 torch
 transformers
 sentence-transformers
+bitsandbytes
+
+# FAISS for vector search
 faiss-cpu
-PyMuPDF
+
+# LangChain (core + community tools)
+langchain
+langchain-community
+
+# PDF handling (used for ingestion)
+PyPDF2
+
+# Terminal utilities (optional)
+termcolor
+
+# Safe serialization
+pickle5
+tqdm

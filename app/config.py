@@ -1,3 +1,5 @@
-MODEL_ID = "Qwen/Qwen1.5-1.8B-Chat"
+QWEN_MODEL_NAME = "Qwen/Qwen2.5-7B-Instruct-1M"
+# QWEN_MODEL_NAME = "Qwen/Qwen1.5-1.8B-Chat"
+EMBEDDING_MODEL_NAME = "BAAI/bge-small-en"
 INDEX_PATH = "vector_store/index.faiss"
 DOCS_PATH = "vector_store/docs.pkl"
