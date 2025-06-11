@@ -2,12 +2,12 @@ import pickle, faiss
 from transformers import AutoModelForCausalLM, AutoTokenizer
 import torch
 from sentence_transformers import SentenceTransformer
-from app.config import MODEL_ID, INDEX_PATH, DOCS_PATH
+from app.config import MODEL_ID, INDEX_PATH, DOCS_PATH, EMBEDDING_MODEL
 
 # Load models
 tokenizer = AutoTokenizer.from_pretrained(MODEL_ID, trust_remote_code=True)
 model = AutoModelForCausalLM.from_pretrained(MODEL_ID, trust_remote_code=True).eval()
-embedder = SentenceTransformer("all-MiniLM-L6-v2")
+embedder = SentenceTransformer(EMBEDDING_MODEL)
 
 def get_context(question, k=3):
     with open(DOCS_PATH, "rb") as f:
